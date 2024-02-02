@@ -4,7 +4,7 @@ import lld.messagequeue.datastructure.Queue;
 import lld.messagequeue.datastructure.QueuePayload;
 import lld.messagequeue.datastructure.impl.QueueImplementation;
 
-public class Main {
+public class Main extends Thread {
     public static void main(String[] args) {
         Queue queue = new QueueImplementation();
         NotificationDelegator notificationDelegator = new NotificationDelegatorRunner();
@@ -21,6 +21,8 @@ public class Main {
                 System.out.println(e.getMessage());
             }
         }
+        Thread mainThread = Thread.currentThread();
+        System.out.println("Main Thread Name:" + mainThread.getId());
         QueuePayload queuePayload = new QueuePayload();
         queuePayload.setId("Message 1");
         queuePayload.setTopicName("/chat");

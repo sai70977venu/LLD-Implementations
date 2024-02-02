@@ -17,6 +17,6 @@ public class ConsumerImpl extends Thread implements Consumer {
 
     @Override
     public void onMessageReceived(String payload) {
-        System.out.println("Thread Name: " + this.name + " Received Payload: " + payload);
+        System.out.println("Thread Name: " + this.getId() + " Received Payload: " + payload);
     }
 }
