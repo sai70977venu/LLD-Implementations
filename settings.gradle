@@ -18,4 +18,5 @@ plugins {
 
 rootProject.name = 'LLD'
 include('app', 'meesagequeue', 'utilities')
+include 'parking-lot-management'
 
